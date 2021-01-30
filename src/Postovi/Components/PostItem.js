@@ -61,7 +61,7 @@ const PostItem = props => {
       setIsLoading(false);
       props.onDelete(props.id);
       setIsDeleted(true);
-      history.push('/u1/postovi');
+      //history.push('/u1/postovi');
       auth.login(responseData.id);
     }
     catch (err) {
@@ -100,6 +100,9 @@ const PostItem = props => {
           <div className="other">
             {auth.isLoggedIn && (
               <Button to={`/postovi/${props.id}`}>EDIT</Button>
+            )}
+             {auth.isLoggedIn && (
+              <Button to={`/postovi/${props.id}/comments`}>KOMENTARI</Button>
             )}
             {auth.isLoggedIn && (<Button danger onClick={deletePost}>DELETE</Button>)}
           </div>

@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Korisnici from './Korisnici/Pages/Korisnici';
 import NoviPost from './Postovi/Pages/NoviPost';
+import PostComments from './Comments/Pages/PostComments';
 import KorisnikPosts from './Postovi/Pages/KorisnikPosts'
 import MainNavigation from './Shared/Components/Navigation/MainNavigation';
 import UpdatePost from './Postovi/Pages/UpdatePost';
@@ -37,6 +38,10 @@ const App = () => {
           <UpdatePost />
         </Route>
 
+        <Route path="/postovi/:postId/comments" exact>
+          <PostComments />
+        </Route>
+
         <Route path="/:korisnikId/postovi" exact>
           <KorisnikPosts />
         </Route>
@@ -59,6 +64,11 @@ const App = () => {
         <Route path="/:korisnikId/postovi" exact>
           <KorisnikPosts />
         </Route>
+
+        <Route path="/postovi/:postId/comments" exact>
+          <PostComments />
+        </Route>
+
         <Redirect to = "/auth" exact>
         </Redirect>
         
