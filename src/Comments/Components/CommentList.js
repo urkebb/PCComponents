@@ -25,7 +25,8 @@ const CommentList = props => {
               description={comment.description}
               postID={comment.post}
               creatorId={comment.creator}
-              onDelete={props.onDeletePost}
+              creatorName={comment.creatorName}
+              onDelete={props.Comment}
             />
           ))}
         </ul>
